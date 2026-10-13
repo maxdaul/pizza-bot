@@ -1,97 +1,623 @@
 {
-    "project": {
-        "id": "zb-cailapub",
-        "name": "zb-cailapub",
-        "folder": "/platform"
+  "project" : {
+    "id" : "zakaz_pitsts-1000212435-tLu",
+    "name" : "zakaz_pitsts-1000212435-tLu",
+    "folder" : "/platform"
+  },
+  "settings" : {
+    "language" : "ru",
+    "spellingCorrection" : false,
+    "classificationAlgorithm" : "sts",
+    "timezone" : "Europe/Moscow",
+    "extendedSettings" : {
+      "classificationAlgorithmVersion" : 1.0,
+      "tokenizerEngine" : "mystem",
+      "useShared" : false
     },
-    "settings": {
-        "language": "ru",
-        "spellingCorrection": false,
-        "classificationAlgorithm": "sts",
-        "validation": {
-            "phraseValidationEnabled": true,
-            "answerValidationEnabled": true,
-            "phraseValidationThreshold": 0.5,
-            "answerValidationThreshold": 0.8
-        },
-        "timezone": "Europe/Moscow",
-        "extendedSettings": {
-            "classificationAlgorithmVersion": 1.0,
-            "tokenizerEngine": "mystem",
-            "useShared": false
-        }
+    "shared" : false,
+    "validation" : {
+      "phraseValidationEnabled" : true,
+      "answerValidationEnabled" : true,
+      "phraseValidationThreshold" : 0.5,
+      "answerValidationThreshold" : 0.8
+    }
+  },
+  "intents" : [ {
+    "path" : "/ЗаказатьПиццу",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Хочу заказать пиццу"
+    }, {
+      "text" : "Хочу @pizza_size @pizza_topping пиццу"
+    }, {
+      "text" : "Закажу @pizza_size пиццу на @pizza_base тесте"
+    }, {
+      "text" : "Давайте @pizza_topping пиццу на @pizza_base тесте"
+    }, {
+      "text" : "Мне нужна @pizza_size @pizza_topping пицца на @pizza_base тесте"
+    }, {
+      "text" : "Приготовьте @pizza_topping @pizza_size пиццу"
+    }, {
+      "text" : "Закажу @pizza_size @pizza_topping пиццу с доставкой по адресу @address"
+    }, {
+      "text" : "Хочу @pizza_topping пиццу на @pizza_base тесте адрес доставки @address"
+    }, {
+      "text" : "Привезите @pizza_size пиццу на @pizza_base тесте по адресу @address"
+    }, {
+      "text" : "Заказываю @pizza_size @pizza_topping пиццу на @pizza_base тесте адрес @address"
+    }, {
+      "text" : "@pizza_size @pizza_topping пиццу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
     },
-    "intents": [
-        {
-            "path": "/пока",
-            "description": null,
-            "answer": null,
-            "customData": null,
-            "enabled": true,
-            "phrases": [
-                {
-                    "text": "пока",
-                    "entities": null
-                }
-            ],
-            "patterns": null,
-            "slots": null
-        },
-        {
-            "path": "/привет",
-            "description": null,
-            "answer": null,
-            "customData": null,
-            "enabled": true,
-            "phrases": [
-                {
-                    "text": "привет",
-                    "entities": null
-                }
-            ],
-            "patterns": null,
-            "slots": null
-        }
-    ],
-    "entities": [],
-    "enabledSystemEntities": [
-        "duckling.number",
-        "duckling.time",
-        "duckling.duration",
-        "duckling.phone-number",
-        "duckling.email",
-        "duckling.url"
-    ],
-    "systemEntities": [
-        {
-            "name": "duckling.number",
-            "version": "v2",
-            "enabled": true
-        },
-        {
-            "name": "duckling.time",
-            "version": "v2",
-            "enabled": true
-        },
-        {
-            "name": "duckling.duration",
-            "version": "v2",
-            "enabled": true
-        },
-        {
-            "name": "duckling.phone-number",
-            "version": "v2",
-            "enabled": true
-        },
-        {
-            "name": "duckling.email",
-            "version": "v2",
-            "enabled": true
-        },
-        {
-            "name": "duckling.url",
-            "version": "v2",
-            "enabled": true
-        }
-    ]
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "size",
+      "entity" : "pizza_size",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    }, {
+      "name" : "topping",
+      "entity" : "pizza_topping",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    }, {
+      "name" : "base",
+      "entity" : "pizza_base",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    }, {
+      "name" : "address",
+      "entity" : "address",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/ИзменитьЗаказ",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Нет"
+    }, {
+      "text" : "Не подтверждаю"
+    }, {
+      "text" : "Хочу изменить заказ"
+    }, {
+      "text" : "Изменить заказ"
+    }, {
+      "text" : "Изменить"
+    }, {
+      "text" : "Хочу поменять размер пиццы"
+    }, {
+      "text" : "Хочу поменять пиццу"
+    }, {
+      "text" : "Хочу поменять тип пиццы"
+    }, {
+      "text" : "Хочу поменять параметры пиццы"
+    }, {
+      "text" : "Хочу внести изменения"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ВыбратьРазмер",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@pizza_size"
+    }, {
+      "text" : "Я буду @pizza_size"
+    }, {
+      "text" : "Выбираю @pizza_size"
+    }, {
+      "text" : "Хочу @pizza_size"
+    }, {
+      "text" : "Давайте @pizza_size размер"
+    }, {
+      "text" : "Можно @pizza_size"
+    }, {
+      "text" : "Я хочу @pizza_size "
+    }, {
+      "text" : "Остановлюсь на @pizza_size размере"
+    }, {
+      "text" : "Хочу @pizza_size размера"
+    }, {
+      "text" : "Я буду @pizza_size размер пиццы"
+    }, {
+      "text" : "Пиццу @pizza_size  размера"
+    }, {
+      "text" : "Поменяйте размер на @pizza_size"
+    }, {
+      "text" : "Измените на @pizza_size размер"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "size",
+      "entity" : "pizza_size",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/ПодтвердитьЗаказ",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Да"
+    }, {
+      "text" : "Подтверждаю"
+    }, {
+      "text" : "Согласен"
+    }, {
+      "text" : "Подтверждаю заказ"
+    }, {
+      "text" : "Всё верно"
+    }, {
+      "text" : "Правильно"
+    }, {
+      "text" : "Верно"
+    }, {
+      "text" : "Все устраивает"
+    }, {
+      "text" : "Оформляйте"
+    }, {
+      "text" : "Ага"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/пока",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "пока"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
+  }, {
+    "path" : "/привет",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "привет"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "priority" : 0
+  }, {
+    "path" : "/ВыбратьНачинку",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@pizza_topping"
+    }, {
+      "text" : "хочу @pizza_topping"
+    }, {
+      "text" : "давайте @pizza_topping"
+    }, {
+      "text" : "буду @pizza_topping"
+    }, {
+      "text" : "хочу @pizza_topping пиццу"
+    }, {
+      "text" : "давайте @pizza_topping пиццу"
+    }, {
+      "text" : "начинка @pizza_topping"
+    }, {
+      "text" : "возьму @pizza_topping"
+    }, {
+      "text" : "буду @pizza_topping пиццу"
+    }, {
+      "text" : "возьму @pizza_topping пиццу"
+    }, {
+      "text" : "@pizza_topping пиццу"
+    }, {
+      "text" : "Поменяйте на @pizza_topping пиццу"
+    }, {
+      "text" : "Измените на @pizza_topping пиццу"
+    }, {
+      "text" : "Измените пиццу на @pizza_topping"
+    }, {
+      "text" : "Поменяйте пиццу на @pizza_topping"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "topping",
+      "entity" : "pizza_topping",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/ВыбратьОснову",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@pizza_base"
+    }, {
+      "text" : "давайте @pizza_base"
+    }, {
+      "text" : "хочу @pizza_base основу"
+    }, {
+      "text" : "выбираю @pizza_base основу"
+    }, {
+      "text" : "давайте @pizza_base основу"
+    }, {
+      "text" : "@pizza_base основу"
+    }, {
+      "text" : "@pizza_base тесто"
+    }, {
+      "text" : "хочу @pizza_base"
+    }, {
+      "text" : "буду @pizza_base"
+    }, {
+      "text" : "хочу @pizza_base тесто"
+    }, {
+      "text" : "буду @pizza_base тесто"
+    }, {
+      "text" : "сделайте @pizza_base тесто"
+    }, {
+      "text" : "давайте @pizza_base тесто"
+    }, {
+      "text" : "Измените основу на @pizza_base"
+    }, {
+      "text" : "Измените тесто на @pizza_base"
+    }, {
+      "text" : "Поменяйте на @pizza_base тесто"
+    }, {
+      "text" : "Измените на @pizza_base тесто"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "base",
+      "entity" : "pizza_base",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/УказатьАдрес",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "@address"
+    }, {
+      "text" : "выбираю @address"
+    }, {
+      "text" : "живу на @address"
+    }, {
+      "text" : "мой адрес @address"
+    }, {
+      "text" : "адрес доставки @address"
+    }, {
+      "text" : "доставьте на @address"
+    }, {
+      "text" : "я нахожусь на @address"
+    }, {
+      "text" : "живу на @address"
+    }, {
+      "text" : "адрес @address"
+    }, {
+      "text" : "отправьте на @address"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "address",
+      "entity" : "address",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    } ],
+    "priority" : 0
+  }, {
+    "path" : "/НачатьЗаново",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Начать заново"
+    }, {
+      "text" : "Начнём сначала"
+    }, {
+      "text" : "Сбросить"
+    }, {
+      "text" : "Заново"
+    }, {
+      "text" : "Очистить"
+    }, {
+      "text" : "С нуля"
+    }, {
+      "text" : "сброс"
+    }, {
+      "text" : "все заново"
+    }, {
+      "text" : "Рестарт"
+    }, {
+      "text" : "Начнем с нуля"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  } ],
+  "entities" : [ {
+    "entity" : {
+      "name" : "pizza_size",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "маленький", "небольшой" ],
+      "value" : "{\"value\":\"small\",\"ru_name\":\"маленькая\",\"price\":350}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "средний", "стандартный" ],
+      "value" : "{\"value\":\"medium\",\"ru_name\":\"средняя\",\"price\":450}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "большой", "крупный" ],
+      "value" : "{\"value\":\"large\",\"ru_name\":\"большая\",\"price\":550}"
+    } ]
+  }, {
+    "entity" : {
+      "name" : "pizza_base",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "тонкий", "на тонком тесте" ],
+      "value" : "{\"value\":\"thin\",\"ru_name\":\"тонкая\",\"extra\":0}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "пышный", "на пышном тесте", "толстый", "на толстом тесте" ],
+      "value" : "{\"value\":\"thick\",\"ru_name\":\"пышная\",\"extra\":50}"
+    } ]
+  }, {
+    "entity" : {
+      "name" : "street_name",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "Ленина" ],
+      "value" : ""
+    }, {
+      "type" : "pattern",
+      "rule" : [ "Советская" ],
+      "value" : ""
+    }, {
+      "type" : "pattern",
+      "rule" : [ "Лермонтова" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "pizza_topping",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "сырный", "с сыром" ],
+      "value" : "{\"value\":\"cheese\",\"ru_name\":\"сырная\",\"extra\":50}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "мясной", "с мясом" ],
+      "value" : "{\"value\":\"meat\",\"ru_name\":\"мясная\",\"extra\":100}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "овощной", "с овощами" ],
+      "value" : "{\"value\":\"vegetable\",\"ru_name\":\"овощная\",\"extra\":0}"
+    } ]
+  }, {
+    "entity" : {
+      "name" : "street",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "улица @street_name" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "address",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "@street дом @duckling.number" ],
+      "value" : ""
+    } ]
+  } ],
+  "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
+  "spellerDictionary" : [ ],
+  "systemEntities" : [ {
+    "name" : "mystem.geo",
+    "enabled" : false
+  }, {
+    "name" : "mystem.persn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.obsc",
+    "enabled" : false
+  }, {
+    "name" : "mystem.patrn",
+    "enabled" : false
+  }, {
+    "name" : "mystem.famn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.romn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.latn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.numb",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.intg",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.abbr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.name",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.surn",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.patr",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.geox",
+    "enabled" : false
+  }, {
+    "name" : "pymorphy.orgn",
+    "enabled" : false
+  }, {
+    "name" : "duckling.number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.ordinal",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.amount-of-money",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.distance",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.date",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.time-of-day",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "duckling.duration",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.phone-number",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.email",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.url",
+    "version" : "v2",
+    "enabled" : true
+  }, {
+    "name" : "duckling.interval",
+    "version" : "v2",
+    "enabled" : false
+  }, {
+    "name" : "mlps-obscene.obscene",
+    "enabled" : false
+  }, {
+    "name" : "zb.datetime",
+    "enabled" : false
+  }, {
+    "name" : "zb.number",
+    "enabled" : false
+  } ],
+  "faq" : [ ],
+  "skills" : [ ]
 }
